@@ -42,6 +42,12 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # A Ruby static code analyzer and formatter, based on the community Ruby style guide.
+  gem 'rubocop', require: false
+  # A Ruby code quality reporter
+  gem "rubycritic", require: false
+  # Static analysis tool for checking Ruby code for Sandi Metz' rules.
+  gem 'sandi_meter', '~> 1.2'
 end
 
 group :test do

@@ -12,5 +12,17 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+// Bootstrap
+require("stylesheets/application.scss")
+window.bootstrap = require("bootstrap");
+
 // StimulusJs
 import "controllers"
+
+// TooltipBootstrap
+document.addEventListener('turbolinks:load', ()=> {
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+});

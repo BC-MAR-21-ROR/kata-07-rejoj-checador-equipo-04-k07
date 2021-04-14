@@ -12,8 +12,5 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-// Bootstrap
-import "bootstrap";
-
 // StimulusJs
 import "controllers"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_14_223915) do
+ActiveRecord::Schema.define(version: 2021_04_15_015030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(version: 2021_04_14_223915) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "employee_checks", force: :cascade do |t|
+    t.integer "check_type"
+    t.bigint "employee_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["employee_id"], name: "index_employee_checks_on_employee_id"
+  end
+
   create_table "employees", force: :cascade do |t|
     t.string "email"
     t.string "name"
@@ -57,6 +65,7 @@ ActiveRecord::Schema.define(version: 2021_04_14_223915) do
     t.bigint "company_branch_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "private_number"
     t.index ["company_branch_id"], name: "index_employees_on_company_branch_id"
   end
 
@@ -73,5 +82,6 @@ ActiveRecord::Schema.define(version: 2021_04_14_223915) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "employee_checks", "employees"
   add_foreign_key "employees", "company_branches"
 end

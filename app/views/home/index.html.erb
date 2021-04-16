@@ -1,8 +1,33 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+<div> 
+  <%= link_to "Admin access", new_admin_user_session_path %>
+  <h1>Access to employees</h1>
+  <h2>Private number required</h2>
+
+  <%= form_with( model: @employee_check ) do |form| %>
+  	<div class="field">
+      <%= form.label :private_number, "Type your employee private number:" %> <br>
+      <%= form.text_field :private_number %>
+  	</div>
+
+	<% if @employee_check.errors.any? %>
+		<div id="error_explanation">
+		  <h4><%= pluralize(@employee_check.errors.count, "error") %></h4>
+
+		  <ul>
+		    <% @employee_check.errors.each do |error| %>
+		      <li><%= error.full_message %></li>
+		    <% end %>
+		  </ul>
+		</div>
+	<% end %>
+
+  	<div class="actions">
+    	<%= form.submit "Send" %>
+  	</div>
+  <% end %>
+</div>
+
+<!-- <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
   Tooltip on top
 </button>
 <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">
@@ -13,4 +38,4 @@
 </button>
 <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">
   Tooltip on left
-</button>
+</button> -->

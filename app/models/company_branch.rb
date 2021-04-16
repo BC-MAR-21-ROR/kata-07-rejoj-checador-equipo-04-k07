@@ -9,5 +9,7 @@
 #  updated_at :datetime         not null
 #
 class CompanyBranch < ApplicationRecord
-  has_many :employee
+  has_many :employees
+
+  validates :name, presence: true, uniqueness: true
 end

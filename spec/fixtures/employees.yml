@@ -1,0 +1,8 @@
+one:
+  email: test@test.com
+  name: Employee test one
+  position: Employee
+  employee_number: 1
+  private_number: fixture one
+  status: true
+  company_branch: one

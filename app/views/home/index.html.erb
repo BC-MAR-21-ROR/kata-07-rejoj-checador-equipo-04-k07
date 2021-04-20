@@ -1,41 +1,49 @@
-<div> 
-  <%= link_to "Admin access", new_admin_user_session_path %>
-  <h1>Access to employees</h1>
-  <h2>Private number required</h2>
-
-  <%= form_with( model: @employee_check ) do |form| %>
-  	<div class="field">
-      <%= form.label :private_number, "Type your employee private number:" %> <br>
-      <%= form.text_field :private_number %>
-  	</div>
-
-	<% if @employee_check.errors.any? %>
-		<div id="error_explanation">
-		  <h4><%= pluralize(@employee_check.errors.count, "error") %></h4>
-
-		  <ul>
-		    <% @employee_check.errors.each do |error| %>
-		      <li><%= error.full_message %></li>
-		    <% end %>
-		  </ul>
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+	<div class="container-fluid">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link active text-white" aria-current="page">
+					<%= link_to "Admin access", new_admin_user_session_path %>
+				</a>
+ 
+			</li>
+		</ul>
 		</div>
-	<% end %>
+	</div>
+</nav>
+<div class="container bg-light shadow "> 
 
-  	<div class="actions">
-    	<%= form.submit "Send" %>
-  	</div>
-  <% end %>
+  <h1 class="text-center">Access to employees</h1>
+  <h2>Private number required</h2>
+	<form class="">
+		<%= form_with( model: @employee_check ) do |form| %>
+			<div class="field">
+			<%= form.label :private_number, "Type your employee private number:" %> <br>
+			<%= form.text_field :private_number %>
+			</div>
+
+			<% if @employee_check.errors.any? %>
+				<div id="error_explanation">
+				<h4><%= pluralize(@employee_check.errors.count, "error") %></h4>
+
+				<ul>
+					<% @employee_check.errors.each do |error| %>
+					<li><%= error.full_message %></li>
+					<% end %>
+				</ul>
+				</div>
+			<% end %>
+			<div class="btn btn-secondary">
+				<%= form.submit "Send" %>
+			</div>
+		<% end %>
+	</form>
+	<br>
 </div>
-
-<!-- <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
-  Tooltip on top
-</button>
-<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">
-  Tooltip on right
-</button>
-<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">
-  Tooltip on bottom
-</button>
-<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">
-  Tooltip on left
-</button> -->
+<div class="bg-dark fixed-bottom">
+	<br><br><br><br>
+</div>

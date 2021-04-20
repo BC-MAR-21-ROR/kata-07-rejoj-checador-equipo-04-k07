@@ -12,12 +12,13 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+// StimulusJs
+import "controllers"
+
 // Bootstrap
 require("stylesheets/application.scss")
 window.bootstrap = require("bootstrap");
 
-// StimulusJs
-import "controllers"
 
 // TooltipBootstrap
 document.addEventListener('turbolinks:load', ()=> {

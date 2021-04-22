@@ -12,6 +12,7 @@ class EmployeeChecksController < ApplicationController
       else
         format.html { render '/home/index', status: :unprocessable_entity }
         format.json { render json: @employee_check.errors, status: :unprocessable_entity }
+        format.js   { render 'employee_checks/form_errors', locals: { errors: @employee_check.errors } }
       end
     end
   end

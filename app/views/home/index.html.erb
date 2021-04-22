@@ -1,41 +1,29 @@
-<div> 
-  <%= link_to "Admin access", new_admin_user_session_path %>
-  <h1>Access to employees</h1>
-  <h2>Private number required</h2>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+	<%= render 'partials/navbar' %>
+  <main class="px-3">
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+      <div class="row align-items-center g-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+          <h1 class="display-4 fw-bold lh-1 mb-3">Access to employees</h1>
+          <p class="col-lg-10 fs-4">Enter your private employee number to be able to mark your entry and exit from the store.</p>
+        </div>
 
-  <%= form_with( model: @employee_check ) do |form| %>
-  	<div class="field">
-      <%= form.label :private_number, "Type your employee private number:" %> <br>
-      <%= form.text_field :private_number %>
-  	</div>
+        <div class="col-10 mx-auto col-lg-5">
 
-	<% if @employee_check.errors.any? %>
-		<div id="error_explanation">
-		  <h4><%= pluralize(@employee_check.errors.count, "error") %></h4>
+            <%= form_with( model: @employee_check, local: false, class:"p-5 border rounded-3 bg-light" ) do |form| %>
+              <div class="form-floating mb-3">
+                <%= form.text_field :private_number, class:"form-control", id:"floatingInput", placeholder:"" %>
+                <%= form.label :private_number, for:"floatingInput" %>
+              </div>
+              <%= form.submit "Check", class:"w-100 btn btn-lg btn-primary" %>
+              <hr class="my-4">
+              <small class="text-muted">If you do not remember your number it is on the back of your card.</small>
+            <% end %>
 
-		  <ul>
-		    <% @employee_check.errors.each do |error| %>
-		      <li><%= error.full_message %></li>
-		    <% end %>
-		  </ul>
-		</div>
-	<% end %>
-
-  	<div class="actions">
-    	<%= form.submit "Send" %>
-  	</div>
-  <% end %>
+        </div>
+      </div>
+    </div>
+  </main>
+  <%= render 'partials/footer' %>
 </div>
 
-<!-- <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
-  Tooltip on top
-</button>
-<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">
-  Tooltip on right
-</button>
-<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">
-  Tooltip on bottom
-</button>
-<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">
-  Tooltip on left
-</button> -->

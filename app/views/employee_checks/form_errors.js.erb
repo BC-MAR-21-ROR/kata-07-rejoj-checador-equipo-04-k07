@@ -1,0 +1,14 @@
+existing = document.getElementById('error_explanation');
+if (existing) { document.getElementById('error_explanation').remove() };
+html_errors = document.createElement('div');
+html_errors.setAttribute('id', 'error_explanation');
+html_errors.setAttribute('class', 'alert alert-danger alert-dismissible fade show');
+html_errors.setAttribute('role', 'alert');
+html_errors.innerHTML = '<h4><%= pluralize(errors.count, "error") %></h4>'+
+  '<ul>'+
+    <% errors.each do |error| %>
+      '<li><p><%= error.full_message %></p></li>'+
+    <% end %>
+  '</ul>'+
+  '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+document.querySelector('form').prepend(html_errors);

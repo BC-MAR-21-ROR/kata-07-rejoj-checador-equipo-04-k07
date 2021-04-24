@@ -9,17 +9,16 @@
         </div>
 
         <div class="col-10 mx-auto col-lg-5">
-
-            <%= form_with( model: @employee_check, local: false, class:"p-5 border rounded-3 bg-light" ) do |form| %>
-              <div class="form-floating mb-3">
-                <%= form.text_field :private_number, class:"form-control", id:"floatingInput", placeholder:"" %>
-                <%= form.label :private_number, for:"floatingInput" %>
-              </div>
-              <%= form.submit "Check", class:"w-100 btn btn-lg btn-primary" %>
-              <hr class="my-4">
-              <small class="text-muted">If you do not remember your number it is on the back of your card.</small>
-            <% end %>
-
+          <%= render 'partials/notification' %>
+          <%= form_with( model: @employee_check, local: false, class:"p-5 border rounded-3 bg-light" ) do |form| %>
+            <div class="form-floating mb-3">
+              <%= form.text_field :private_number, class:"form-control", id:"floatingInput", placeholder:"" %>
+              <%= form.label :private_number, for:"floatingInput" %>
+            </div>
+            <%= form.submit "Check", class:"w-100 btn btn-lg btn-primary" %>
+            <hr class="my-4">
+            <small class="text-muted">If you do not remember your number it is on the back of your card.</small>
+          <% end %>
         </div>
       </div>
     </div>

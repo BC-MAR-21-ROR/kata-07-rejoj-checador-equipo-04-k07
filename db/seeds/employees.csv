@@ -1,0 +1,31 @@
+employee_id,email,name,position,employee_number,status,company_branch_id,private_number
+1,beatriztorrejon@foocorp.com,Beatriz Torrejon,Seller,75490,true,1,94958
+2,avelinopavon@foocorp.com,Avelino Pavon,Storer,37232,true,2,55058
+3,ernestosegarra@foocorp.com,Ernesto Segarra,Supervisor,21735,false,3,90940
+4,celestinojerez@foocorp.com,Celestino Jerez,coordinator,80906,false,4,60468
+5,noaahmed@foocorp.com,Noa Ahmed,Seller,80905,false,5,54421
+6,felisacosta@foocorp.com,Felisa Costa,Seller,88944,false,6,88567
+7,basilisatena@foocorp.com,Basilisa Tena,Seller,88709,false,7,8402
+8,adilgutierrez@foocorp.com,Adil Gutierrez,coordinator,8112,true,7,77671
+9,hichamfraga@foocorp.com,Hicham Fraga,Storer,80892,true,8,10719
+10,vicentevalls@foocorp.com,Vicente Valls,Storer,5343,true,9,89944
+11,maialentrillo@foocorp.com,Maialen Trillo,Seller,71370,true,10,12736
+12,lluiscosta@foocorp.com,Lluis Costa,Seller,31283,true,1,74890
+13,gustavomontenegro@foocorp.com,Gustavo Montenegro,Seller,57165,true,2,40582
+14,uxuecliment@foocorp.com,Uxue Climent,Seller,4470,true,3,4367
+15,elisendarequena@foocorp.com,Elisenda Requena,Seller,39883,false,4,23647
+16,rosaye@foocorp.com,Rosa Ye,Seller,96575,false,5,92720
+17,rufinacarreno@foocorp.com,Rufina Carreño,Seller,17590,true,6,94676
+18,beatrizmuriel@foocorp.com,Beatriz Muriel,Storer,89764,true,7,88068
+19,herminiocordoba@foocorp.com,Herminio Cordoba,coordinator,16907,true,8,72944
+20,mariaisabelpaez@foocorp.com,Maria Isabel Paez,Seller,19876,true,9,82412
+21,desiretortosa@foocorp.com,Desire Tortosa,Seller,71500,true,10,91001
+22,ginesrial@foocorp.com,Gines Rial,Seller,10709,true,1,76909
+23,zoecarrion@foocorp.com,Zoe Carrion,Seller,22308,true,2,97729
+24,vicentesoler@foocorp.com,Vicente Soler,Seller,18293,true,3,27760
+25,ursulaclemente@foocorp.com,Ursula Clemente,Seller,39977,true,4,49453
+26,carloscardona@foocorp.com,Carlos Cardona,Seller,60531,true,5,42593
+27,valerianotoledano@foocorp.com,Valeriano Toledano,coordinator,93130,true,6,76360
+28,maitaneribera@foocorp.com,Maitane Ribera,Storer,66122,true,7,81066
+29,narcisoocana@foocorp.com,Narciso Ocaña,Seller,82420,true,8,43935
+30,cintiacervera@foocorp.com,Cintia Cervera,Storer,73578,true,9,25878

@@ -39,4 +39,17 @@ RSpec.describe EmployeeCheck, type: :model do
       expect(employee_check_two.check_type).to eq 'check_out'
     end
   end
+
+  context 'employee absences' do
+    it 'returns true when there is an absence in given day' do
+      absence = employees(:one).absence? Date.today
+      expect(absence).to eq true
+    end
+
+    it 'returns false when there is not an absence in given day' do
+      described_class.create(private_number: employees(:one).private_number)
+      absence = employees(:one).absence? Date.today
+      expect(absence).to eq nil
+    end
+  end
 end

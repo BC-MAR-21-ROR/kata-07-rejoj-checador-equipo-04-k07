@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: employees
@@ -23,5 +25,21 @@ class Employee < ApplicationRecord
   # override destroy action
   def destroy
     update(status: (status ? false : true))
+  end
+
+  def self.absences_month(year = Date.today.year, month = Date.today.month)
+    absences = []
+    Employee.all.each do |employee|
+      (Date.new(year, month)..Date.new(year, month, -1)).to_a.each do |day|
+        absences << { day: day, employee: employee } if employee.absence?(day)
+      end
+    end
+    absences
+  end
+
+  def absence?(day)
+    return false unless day <= Date.today
+
+    true unless EmployeeCheck.where(employee_id: id, created_at: day.midnight..day.end_of_day).count.positive?
   end
 end

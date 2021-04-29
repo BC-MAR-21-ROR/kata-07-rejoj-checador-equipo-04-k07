@@ -41,13 +41,14 @@ class Employee < ApplicationRecord
 
     select('employees.*', "'#{day}' as day")
       .joins("LEFT JOIN employee_checks ON employees.id = employee_checks.employee_id AND
-      Date(employee_checks.created_at) = '#{day}'").having('COUNT(employee_checks.id) = ?', 0).group('employees.id')
+      Date(employee_checks.created_at AT TIME ZONE 'UTC' AT TIME ZONE '#{Time.now.in_time_zone.strftime("%Z")}') = '#{day}'")
+      .having('COUNT(employee_checks.id) = ?', 0).group('employees.id')
   end
 
   def self.attendances(day)
     select('employees.*', "'#{day}' as day", 'employee_checks.created_at as time', 'employee_checks.check_type')
       .joins("LEFT JOIN employee_checks ON employees.id = employee_checks.employee_id AND
-        Date(employee_checks.created_at) = '#{day}'")
+        Date(employee_checks.created_at AT TIME ZONE 'UTC' AT TIME ZONE '#{Time.now.in_time_zone.strftime("%Z")}') = '#{day}'")
       .having('COUNT(employee_checks.id) > ?', 0).group('employee_checks.id, employees.id')
       .order('employee_checks.created_at')
   end

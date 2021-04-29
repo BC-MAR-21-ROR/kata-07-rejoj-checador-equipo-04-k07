@@ -19,7 +19,7 @@ RSpec.describe 'EmployeeChecks', type: :system do
       visit '/'
 
       fill_in 'employee_check_private_number', with: ''
-      click_button 'Send'
+      click_button 'Check'
 
       expect(page).to have_text('error')
     end
@@ -28,7 +28,7 @@ RSpec.describe 'EmployeeChecks', type: :system do
       visit '/'
 
       fill_in 'employee_check_private_number', with: '656'
-      click_button 'Send'
+      click_button 'Check'
 
       expect(page).to have_text('error')
     end
@@ -37,7 +37,7 @@ RSpec.describe 'EmployeeChecks', type: :system do
       visit '/'
 
       fill_in 'employee_check_private_number', with: employees(:one).private_number
-      click_button 'Send'
+      click_button 'Check'
 
       expect(page).to have_text('stored correctly')
     end

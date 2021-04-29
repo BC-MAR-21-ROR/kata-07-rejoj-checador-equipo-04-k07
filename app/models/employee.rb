@@ -28,13 +28,19 @@ class Employee < ApplicationRecord
   end
 
   def self.absences_month(year = Date.today.year, month = Date.today.month)
-    absences = []
-    Employee.all.each do |employee|
-      (Date.new(year, month)..Date.new(year, month, -1)).to_a.each do |day|
-        absences << { day: day, employee: employee } if employee.absence?(day)
-      end
+    employees = []
+    date_init = "#{year}-#{month}-01".to_date
+    (date_init.beginning_of_month..date_init.end_of_month).to_a.each do |day|
+      employees += absences(day)
     end
-    absences
+    employees
+  end
+
+  def self.absences(day)
+    return [] unless day <= Time.now.utc.to_date
+    select('employees.*', "'#{day}' as day")
+      .joins("LEFT JOIN employee_checks ON employees.id = employee_checks.employee_id AND
+      Date(employee_checks.created_at) = '#{day}'").having('COUNT(employee_checks.id) = ?', 0).group('employees.id')
   end
 
   def absence?(day)

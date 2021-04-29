@@ -37,6 +37,7 @@ class Employee < ApplicationRecord
   end
 
   def self.absences(day)
+    return [] unless day <= Time.now.utc.to_date
     select('employees.*', "'#{day}' as day")
       .joins("LEFT JOIN employee_checks ON employees.id = employee_checks.employee_id AND
       Date(employee_checks.created_at) = '#{day}'").having('COUNT(employee_checks.id) = ?', 0).group('employees.id')

@@ -1,37 +1,57 @@
-# Tegnologies 
-this prollect was make in **Ruby on Rails**
+# Technologies 
+This project was made with **Ruby on Rails** framework and uses postgreSQL as DB.
+
 ## Dependences
 
 Flexible authentication solution for Rails with Warden.
 
 `gem 'devise'`
 
-creating of formularies 
+Plugin for generating administration style interfaces.
 
 `gem 'activeadmin'`
 
-**manager of databases **
-**postgreql**
-In this case this database was selected postgreql 
-# installation
+Open source object-relational database system.
+
+**postgreSQL**
+ 
+# Installation
 ### **Need exec this commands for install this app**
 
-**install dependences**
-`bundle install`
-
-`yarn install`
-
+**Install dependences with**
+```bash
+bundle install
+yarn install
+```
 **Create database**
-`rails db:create`
+```bash
+rails db:create
+```
+**Run Migrations**
+```bash
+rails db:migrate
+```
+**Seed database with data**
+```bash
+rails db:seed
+```
+It creates a default user in the database, so you can access with the following credentials:
 
-**Run Migration**
-`rails db:migrate`
+`user: admin@example.com`
 
-**Create user**
-`rails db:seed`
-this coman createtades user  of tests, you can change the password or delete user and create new users
-**run the  app**
-`rails s`
+`password: password`
+
+You can change the password or delete this user and create a new one.
+
+If you wanto to save some time you can only run 'setup' command and the above commands create, migrate, and seed will be run.
+```bash
+rails db:setup
+```
+
+**Run the app**
+```bash
+rails s
+```
 
 ## User Manual
 You need go in this url [home](127.0.0.1:3000 "home")

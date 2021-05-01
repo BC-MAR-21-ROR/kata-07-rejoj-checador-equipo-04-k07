@@ -19,7 +19,7 @@ ActiveAdmin.register_page 'Absence Report' do
       collection = Kaminari.paginate_array(Employee.absences_month(year, month)).page(params[:page]).per(30)
       paginated_collection(collection, download_links: false) do
         table_for(collection) do
-          column :day
+           
           column :employee_number
           column :name
           column :private_number

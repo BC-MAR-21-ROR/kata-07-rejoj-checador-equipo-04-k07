@@ -52,35 +52,49 @@ rails db:setup
 ```bash
 rails s
 ```
+Now you can access to your local server and access to the app.
 
-## User Manual
-You need go in this url [home](127.0.0.1:3000 "home")
+# Test
+This app uses rspec testing framework with rspec-rails gem so you only have to run:
+```bash
+rspec
+```
+System, requests and models are covered.
+
+# Live Demo
+You can acces to a live demo app in the following [heroku page](https://herokuapp.com).
+
+# User Manual
+When you visit the [home](http://127.0.0.1:3000 "home") url, you will see the check in/out page.
+
 ![page of start](../img/inicio.png "page of start")
 
 ### Check in and Check out
-write your code  for check in and check out 
-![Pnel of check](../img/panel de check.png "Pnel of check")
 
-### Login
-For login  you need put user an password
+To register your check in/out you only have to type your employee private number and click Check button. 
+
+![Panel of check](../img/panel_de_check.png "Panel of check")
+
+### Login in admin portal
+
+To login in admin portal you need to click in the 'admin access' link located at the top right side and type your user and password in the login form.
+
 ![login](../img/login.png "login")
 
 ### Home
-This is  a page of Home. In this page you whatch a menu in a nav var  with  options of navigate.
+This is the Home page. In this page you'll see a menu and a navbar with options to navigate.
 
 ![Page of Home](../img/home.png "Page of Home")
 
 ### Absence Report
-You can seach users for date or expor CSV
+In this page you can generate a report of the employees absences in the given month and export it to a CSV file.
 
 ![absence report](../img/absence_report.png "seach absence report")
-
-In this table you can see  the users
-
 ![table of absence report](../img/table_absence_report.png "table of absence report")
 
 ### Admin Users
-In this page you see the admin users, the user show a  user in tablet and a menu of filter.
+In this page you'll see the existing admin users.
+
 ![admin users](../img/admin_users.png "admin users")
 ####  Add New User Admin
 You can create a new  user with a email and password
@@ -88,22 +102,23 @@ You can create a new  user with a email and password
 ![new admin users](../img/new_admin_users.png "new admin users")
 
 ###  Attendance Report
-In this page you can see a attendance report and  for look with date and export CSV
+In this page you can see an attendance report when selecting a day in the search form.
+
 ![attendance report](../img/attendance_report.png "attendance report")
 
 ### Company Branches
-In this page you can see that company branches and filter with menu of  search on right
+In this page you can see the existing company branches and filter them with the search form on the right.
+
 ![company branches](../img/company_branches.png "company branches")
+
 #### New Company Branches
-for add a new company branches,  you need a name and address
+To create a new company branch, you need a name and an address.
 ![new company branches](../img/new_company_branches.png "new company branches")
 
-### employees
-In this page you can see that employees and filter with menu of  search on right
+### Employees
+In this page you can see the existing employees and also filter them with the search form on the right.
+
 ![employees](../img/employees.png "employees")
 
-In this page you can add a new Employee and you need emails, Employee number, Private number
+In this page you can create a new Employee.
 ![new employees](../img/new_employees.png "new employees")
-
-
-this prollect is runing in heroku [Page](http://heroku  "Page")

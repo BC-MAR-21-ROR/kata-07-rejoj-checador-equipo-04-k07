@@ -3,7 +3,7 @@ This project was made with **Ruby on Rails** framework and uses postgreSQL as DB
 
 ## Dependences
 
-Flexible authentication solution for Rails with Warden.
+Flexible authentication solution for Ruby On Rails.
 
 `gem 'devise'`
 
@@ -52,7 +52,7 @@ rails db:setup
 ```bash
 rails s
 ```
-Now you can access to your local server and access to the app.
+Now you can access to your local server and use the app.
 
 # Test
 This app uses rspec testing framework with rspec-rails gem so you only have to run:
@@ -64,19 +64,22 @@ System, requests and models are covered.
 # Live Demo
 You can acces to a live demo app in the following [heroku page](https://herokuapp.com).
 
+# Authors
+- Brayan Diaz C. [brayandiazc](https://github.com/brayandaizc)
+- Jose R. Fierro. [Magic-Kowel](https://github.com/Magic-Kowel)
+- Carlos Montiel. [Carlos-Montiel](https://github.com/Carlos-Montiel) 
+
 # User Manual
 When you visit the [home](http://127.0.0.1:3000 "home") url, you will see the check in/out page.
 
 ![page of start](../img/inicio.png "page of start")
 
 ### Check in and Check out
-
 To register your check in/out you only have to type your employee private number and click Check button. 
 
 ![Panel of check](../img/panel_de_check.png "Panel of check")
 
 ### Login in admin portal
-
 To login in admin portal you need to click in the 'admin access' link located at the top right side and type your user and password in the login form.
 
 ![login](../img/login.png "login")
@@ -96,8 +99,9 @@ In this page you can generate a report of the employees absences in the given mo
 In this page you'll see the existing admin users.
 
 ![admin users](../img/admin_users.png "admin users")
+
 ####  Add New User Admin
-You can create a new  user with a email and password
+You can create a new user with an email and password.
 
 ![new admin users](../img/new_admin_users.png "new admin users")
 
@@ -113,6 +117,7 @@ In this page you can see the existing company branches and filter them with the 
 
 #### New Company Branches
 To create a new company branch, you need a name and an address.
+
 ![new company branches](../img/new_company_branches.png "new company branches")
 
 ### Employees
@@ -121,4 +126,5 @@ In this page you can see the existing employees and also filter them with the se
 ![employees](../img/employees.png "employees")
 
 In this page you can create a new Employee.
+
 ![new employees](../img/new_employees.png "new employees")

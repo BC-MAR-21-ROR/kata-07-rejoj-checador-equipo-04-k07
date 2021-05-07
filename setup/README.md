@@ -62,7 +62,7 @@ rspec
 System, requests and models are covered.
 
 # Live Demo
-You can acces to a live demo app in the following [heroku page](https://herokuapp.com).
+You can acces to a live demo app in the following [heroku page](https://kata-07-team-04.herokuapp.com).
 
 # Authors
 - Brayan Diaz C. [brayandiazc](https://github.com/brayandaizc)
